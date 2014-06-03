@@ -26,15 +26,19 @@
     <div id="diagram-3"></div>
   </div>
 
-  <!-- load snapsvg + lodash -->
 
-  <!-- load diagram-js -->
+  <!-- the following libraries are diagram-js dependencies -->
+  <script type="text/javascript" src="../bower_components/jquery/dist/jquery.js"></script>
+  <script type="text/javascript" src="../bower_components/lodash/dist/lodash.js"></script>
+  <script type="text/javascript" src="../bower_components/snap.svg/dist/snap.svg.js"></script>
+
+  <script type="text/javascript" src="../bower_components/diagram-js/diagram.js"></script>
 
 
   <!-- sample application -->
-  <script>
+  <script type="text/javascript">
 
-    var Diagram = require('diagram');
+    var Diagram = require('diagram-js');
 
     var diagram1 = new Diagram({ canvas: { container: document.getElementById('diagram-1') }});
 

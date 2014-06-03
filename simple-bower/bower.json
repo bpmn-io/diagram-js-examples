@@ -5,5 +5,11 @@
     "Nico Rehwaldt <git_nikku@nixis.de>"
   ],
   "license": "MIT",
-  "private": true
+  "private": true,
+  "dependencies": {
+    "diagram-js": ">=0.0.3"
+  },
+  "resolutions": {
+    "snap.svg": "~0.3.0"
+  }
 }
