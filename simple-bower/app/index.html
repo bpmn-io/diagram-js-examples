@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <!--
+    this is an example of how to use diagram-js via bower
+  -->
+
+  <title>bower example - diagram-js-examples</title>
+
+  <style>
+    .container > div {
+      display: inline-block;
+      width: 33%;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div id="diagram-1"></div>
+    <div id="diagram-2"></div>
+    <div id="diagram-3"></div>
+  </div>
+
+  <!-- load snapsvg + lodash -->
+
+  <!-- load diagram-js -->
+
+
+  <!-- sample application -->
+  <script>
+
+    var Diagram = require('diagram');
+
+    var diagram1 = new Diagram({ canvas: { container: document.getElementById('diagram-1') }});
+
+    var diagram2 = new Diagram({
+      canvas: { container: document.getElementById('diagram-2') },
+      components: [ 'selectionVisuals' ]
+    });
+
+    var diagram3 = new Diagram({
+      canvas: { container: document.getElementById('diagram-3') },
+      modules: {
+        'renderer': [ 'type', function TrafficLightRenderer() {
+
+          this.drawShape = function(paper, data) {
+
+            var element = paper.rect(0, 0, data.width, data.height);
+
+            element.attr('fill', data.type || '#CCC');
+
+            return element;
+          };
+
+          this.drawConnection = function(paper, data) {
+            return paper.rect(10, 10, 100, 100);
+          }
+        }]
+      }
+    });
+
+    function addShape(s) {
+      diagram1.get('canvas').addShape(s);
+      diagram2.get('canvas').addShape(s);
+      diagram3.get('canvas').addShape(s);
+    }
+
+    addShape({ id: 's1', type: 'red', x: 10, y: 20, width: 100, height: 100 });
+    addShape({ id: 's2', type: 'green', x: 10, y: 140, width: 100, height: 100 });
+    addShape({ id: 's3', type: 'yellow', x: 10, y: 260, width: 100, height: 100 });
+
+  </script>
+</body>
+</html>

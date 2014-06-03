@@ -1,0 +1,9 @@
+{
+  "name": "simple-bower",
+  "version": "0.0.0",
+  "authors": [
+    "Nico Rehwaldt <git_nikku@nixis.de>"
+  ],
+  "license": "MIT",
+  "private": true
+}
