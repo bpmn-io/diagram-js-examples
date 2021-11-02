@@ -5,7 +5,7 @@ This repository contains a number of examples that showcase how use and/or integ
 
 ## Advanced
 
-* [editor](./editor) - an example showcasing how to build a simple diagram editor powered by diagram-js
+* [editor](./editor) - an example showcasing how to build an diagram editor powered by diagram-js
 
 
 ## License
