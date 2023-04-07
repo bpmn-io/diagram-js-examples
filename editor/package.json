@@ -6,7 +6,7 @@
   "scripts": {
     "all": "run-s build",
     "build": "webpack --mode production",
-    "dev": "webpack-dev-server --content-base public --open",
+    "dev": "webpack-dev-server --open",
     "start": "run-s dev"
   },
   "repository": {
