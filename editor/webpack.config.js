@@ -12,9 +12,11 @@ module.exports = {
     filename: 'vendor/editor.js'
   },
   plugins: [
-    new CopyWebpackPlugin([
-      { from: '**/*', to: 'vendor', context: 'node_modules/diagram-js/assets' }
-    ])
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: 'node_modules/diagram-js/assets/**/*', to: 'vendor' }
+      ]
+    })
   ],
   mode: 'development',
   devtool: 'source-map'
