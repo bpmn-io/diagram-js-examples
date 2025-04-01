@@ -1,5 +1,3 @@
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-
 module.exports = {
   entry: {
     bundle: ['./src/index.js']
@@ -11,13 +9,17 @@ module.exports = {
     path: __dirname + '/public',
     filename: 'vendor/editor.js'
   },
-  plugins: [
-    new CopyWebpackPlugin({
-      patterns: [
-        { from: 'node_modules/diagram-js/assets/**/*', to: 'vendor' }
-      ]
-    })
-  ],
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: [
+          "style-loader",
+          "css-loader"
+        ],
+      },
+    ],
+  },
   mode: 'development',
   devtool: 'source-map'
 };
