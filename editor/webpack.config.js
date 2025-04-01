@@ -1,5 +1,3 @@
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-
 module.exports = {
   entry: {
     bundle: ['./src/index.js']
